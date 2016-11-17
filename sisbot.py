@@ -43,13 +43,14 @@ def main():
     courses = [1235, 11309, 11444] # Copy course numbers from your SIS shopping cart
     username = 'USERNAME'
     password = 'PASSWORD'
+    sleep = 1
     if login(session, username, password):
         log('Try increasing the sleep time if this breaks')
         input('Hit any key to start firing requests... ')
         while True:
             thread = threading.Thread(target=enroll, args=(session, courses))
             thread.start()
-            time.sleep(0.001)
+            time.sleep(sleep)
 
 if __name__ == '__main__':
     main()
