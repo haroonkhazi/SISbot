@@ -38,11 +38,22 @@ def enroll(session, course_list):
 def get_csrf_token(session):
     return requests.utils.dict_from_cookiejar(session.cookies)['CSRFCookie']
 
+def get_courses():
+    n = int(input("How many courses are you planning on taking? "))
+    courses = []
+    for _ in range(n):
+        courses.append(int(input("Enter the course number: ")))
+    return courses
+
+def get_user_info():
+    username = input('Input your CWRU network id (e.g. abc123) ')
+    password = input('Input your password (this is not stored) ')
+    return (username, password)
+
 def main():
     session = requests.session()
-    courses = [1235, 11309, 11444] # Copy course numbers from your SIS shopping cart
-    username = 'USERNAME'
-    password = 'PASSWORD'
+    courses = get_courses()
+    username, password = get_user_info()
     sleep = 1 # If you cause an accidental DOS by changing this, it's your own darn fault
     if login(session, username, password):
         log('Try increasing the sleep time if this breaks')
