@@ -1,6 +1,7 @@
 # SISBot
-Python selenium bot designed to automate class signup
+SIS automation with python requests
 
 ## Requirements
 `requests`
+
 `datetime`
