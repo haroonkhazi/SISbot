@@ -54,13 +54,14 @@ def main():
     session = requests.session()
     courses = get_courses()
     username, password = get_user_info()
+    sleep = 1
     if login(session, username, password):
         log('Try increasing the sleep time if this breaks')
         input('Hit any key to start firing requests... ')
         while True:
             thread = threading.Thread(target=enroll, args=(session, courses))
             thread.start()
-            time.sleep(0.001)
+            time.sleep(sleep)
 
 if __name__ == '__main__':
     main()
