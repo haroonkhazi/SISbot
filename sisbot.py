@@ -32,6 +32,7 @@ def enroll(session, course_list):
         'enroll':'',
         'selected[]': course_list
     }
+    log('Pew!')
     response = session.post('https://sismobile.case.edu/app/student/enrollmentcart/enroll/CASE1/UGRD/2168',data=payload)
 
 def get_csrf_token(session):
@@ -43,7 +44,8 @@ def main():
     username = 'USERNAME'
     password = 'PASSWORD'
     if login(session, username, password):
-        input('Hit any key to start firing requests')
+        log('Try increasing the sleep time if this breaks')
+        input('Hit any key to start firing requests... ')
         while True:
             thread = threading.Thread(target=enroll, args=(session, courses))
             thread.start()
