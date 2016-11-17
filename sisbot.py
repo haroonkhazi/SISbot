@@ -54,7 +54,7 @@ def main():
     session = requests.session()
     courses = get_courses()
     username, password = get_user_info()
-    sleep = 1
+    sleep = 1 # If you cause an accidental DOS by changing this, it's your own darn fault
     if login(session, username, password):
         log('Try increasing the sleep time if this breaks')
         input('Hit any key to start firing requests... ')
