@@ -48,3 +48,6 @@ def main():
             thread = threading.Thread(target=enroll, args=(session, courses))
             thread.start()
             time.sleep(0.001)
+
+if __name__ == '__main__':
+    main()
