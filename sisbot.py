@@ -43,7 +43,7 @@ def main():
     courses = [1235, 11309, 11444] # Copy course numbers from your SIS shopping cart
     username = 'USERNAME'
     password = 'PASSWORD'
-    sleep = 1
+    sleep = 1 # If you cause an accidental DOS by changing this, it's your own darn fault
     if login(session, username, password):
         log('Try increasing the sleep time if this breaks')
         input('Hit any key to start firing requests... ')
