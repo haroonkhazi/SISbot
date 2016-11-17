@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import requests, threading
+import requests, threading, time
 from datetime import datetime
 
 def log(event):
